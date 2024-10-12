@@ -42,7 +42,10 @@ class CompanyController:
 
             response = self.db.search(index = "website_data", body = {"query": search_query})
 
+            print(response)
+
             if not response['hits']['hits']:
                 raise HTTPException(status_code = 404, detail = "Company not found")
 
-            return CompanyResultQuery(**response['hits']['hits'][0]['_source'])
+            return CompanyResultQuery(**response['hits']['hits'][0]['_source'],
+                                      score = response['hits']['hits'][0]['_score'])
