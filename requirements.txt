@@ -6,3 +6,5 @@ python-dotenv==1.0.1
 requests==2.32.3
 elasticsearch==7.10.1
 numpy==1.25.0
+celery==5.4.0
+rabbitmq==0.2.0
