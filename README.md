@@ -34,6 +34,12 @@
 
 ```python tools/merge_company_data/main.py```
 
+### #5 Run the API:
+
+```python api/main.py```
+
+###### Navigate to http://localhost:8000 to see the API documentation
+
 ### #5 Run the Data Cleaning tool with the command:
 
 ```python tools/clean_elastic_search/main.py```
