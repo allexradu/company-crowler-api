@@ -30,6 +30,10 @@
 
 ```python tools/stats/main.py```
 
-### #4 Run the Data Cleaning tool with the command:
+### #4 Run merge tool to merge company data:
+
+```python tools/merge_company_data/main.py```
+
+### #5 Run the Data Cleaning tool with the command:
 
 ```python tools/clean_elastic_search/main.py```
