@@ -40,6 +40,6 @@
 
 ###### Navigate to http://localhost:8000 to see the API documentation
 
-### #5 Run the Data Cleaning tool with the command:
+### #6 Run the Data Cleaning tool with the command:
 
 ```python tools/clean_elastic_search/main.py```
