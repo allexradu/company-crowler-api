@@ -26,6 +26,10 @@
 
 ```python tools/scalable_scraper/main.py```
 
-### #3 Run the Data Cleaning tool with the command:
+### #3 Run the statistics tool to get stats about the scraped data:
+
+```python tools/stats/main.py```
+
+### #4 Run the Data Cleaning tool with the command:
 
 ```python tools/clean_elastic_search/main.py```
