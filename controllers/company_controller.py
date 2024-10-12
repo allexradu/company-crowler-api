@@ -2,6 +2,7 @@ from fastapi import Depends, HTTPException
 
 from db import DatabaseConnection
 from models.company_query import CompanyQuery
+from models.company_result_query import CompanyResultQuery
 
 
 class CompanyController:
@@ -11,7 +12,7 @@ class CompanyController:
 
     def register(self):
         @self.app.get("/company")
-        async def company(query: CompanyQuery = Depends()):
+        async def company(query: CompanyQuery = Depends()) -> CompanyResultQuery:
             must_not_conditions = [{"exists": {"field": "error"}}]
             should_conditions = []
 
@@ -44,4 +45,4 @@ class CompanyController:
             if not response['hits']['hits']:
                 raise HTTPException(status_code = 404, detail = "Company not found")
 
-            return response['hits']['hits'][0]['_source']
+            return CompanyResultQuery(**response['hits']['hits'][0]['_source'])
