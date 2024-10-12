@@ -128,6 +128,8 @@ async def parse_data(url, soup, html_content, session):
             contact_page = link
 
     phone_numbers = list(set(phone_numbers))
+    phone_numbers = [re.sub(r'[^\d+]', '', number) for number in phone_numbers]
+
     for key in social_links:
         social_links[key] = list(set(social_links[key]))
 
@@ -158,6 +160,8 @@ async def crawl_website(url, session):
 
             # Remove duplicates using a set
             data.phone_numbers = list(set(data.phone_numbers))
+            data.phone_numbers = [re.sub(r'[^\d+]', '', number) for number in data.phone_numbers]
+
             for key in data.social_links:
                 data.social_links[key] = list(set(data.social_links[key]))
 
